@@ -41,14 +41,19 @@ exports.getJokeById = async (req, res) => {
 
 exports.getRandomJoke = async (req, res) => {
   try {
-   const joke = await Joke.findOne({
-      order: sequelize.literal('RANDOM()')
-    });
-    if (!joke) {
+    const jokes = await Joke.findAll(); // Récupère TOUTES les blagues
+
+    if (jokes.length === 0) {
       return res.status(404).json({ message: 'No jokes found' });
     }
-    res.status(200).json(joke);
+
+    // Choisis une blague aléatoirement parmi le tableau JavaScript
+    const randomIndex = Math.floor(Math.random() * jokes.length);
+    const randomJoke = jokes[randomIndex];
+
+    res.status(200).json(randomJoke);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error("Error fetching random joke:", error);
+    res.status(500).json({ error: error.message || 'Internal server error' });
   }
 };
