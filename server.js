@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 // --- DÉBUT DE LA MODIFICATION CORS ---
 // Configure CORS pour autoriser les requêtes depuis mon domaine GitHub Pages
 const corsOptions = {
-  origin: 'https://coralie0586.github.io',
+  origin: 'https://coralie0586.github.io/carambar-blagues-front/',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Ajoute les méthodes HTTP que le frontend va utiliser
   credentials: true, // Si tu utilises des cookies ou des en-têtes d'autorisation
   optionsSuccessStatus: 204 // Pour les requêtes preflight OPTIONS
