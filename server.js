@@ -33,7 +33,11 @@ const swaggerOptions = {
         url: `http://localhost:${PORT}/api/v1`, // Pour le développement local
         description: 'Development server',
       },
-      // Ajoute l'URL de production de Render.com ici une fois déployé
+      // j'ajoute ici l'URL de prod de Render.com une fois déployé
+      {
+        url: "https://carambar-blagues-api.onrender.com", // MON URL RENDER
+        description: 'Production server',
+      },
     ],
     components: {
       schemas: {
