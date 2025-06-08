@@ -42,7 +42,7 @@ const swaggerOptions = {
       description: 'API for Carambar jokes',
     },
     servers: [
-      { url: 'http://localhost:10000/api/v1', description: 'Development server' },
+      { url: 'http://localhost:3000', description: 'Development server' },
       { url: 'https://blagues-carambar-api-qo0w.onrender.com', description: 'Production server' },
     ],
     components: {
